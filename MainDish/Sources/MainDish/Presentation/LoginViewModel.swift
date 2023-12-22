@@ -42,7 +42,7 @@ public class LoginViewModel: ObservableObject {
         do {
             try await loginUseCase.login(email: email, password: password)
             hasFinishedLogin = true
-        } catch is InMemoryAuthenticationService.InvalidCredentials {
+        } catch is InvalidCredentialsException {
             errorMessage = "Invalid credentials"
         } catch {}
     }
@@ -56,7 +56,7 @@ public class LoginViewModel: ObservableObject {
         
         do {
             try await registerUseCase.register(customer: Customer(id: UUID(), name: "Adrian", email: email, deliveryAddress: "Cluj, Romania"), password: password)
-        } catch is InMemoryAuthenticationService.InvalidCredentials {
+        } catch is InvalidCredentialsException {
             errorMessage = "Invalid credentials"
         } catch {}
         

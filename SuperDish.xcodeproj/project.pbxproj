@@ -7,25 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A327BF92B25B568008289FF /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327BF82B25B568008289FF /* MenuItem.swift */; };
-		3A327BFB2B25B577008289FF /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327BFA2B25B577008289FF /* Restaurant.swift */; };
-		3A327BFD2B25B57D008289FF /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327BFC2B25B57D008289FF /* Customer.swift */; };
-		3A327BFF2B25B585008289FF /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327BFE2B25B585008289FF /* Order.swift */; };
-		3A327C012B25B58D008289FF /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C002B25B58D008289FF /* OrderItem.swift */; };
-		3A327C032B25B593008289FF /* PaymentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C022B25B593008289FF /* PaymentDetails.swift */; };
-		3A327C072B25B59E008289FF /* DeliveryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C062B25B59E008289FF /* DeliveryDetails.swift */; };
-		3A327C0A2B25B613008289FF /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C092B25B613008289FF /* LoginUseCase.swift */; };
-		3A327C0C2B25B618008289FF /* FetchRestaurantsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C0B2B25B618008289FF /* FetchRestaurantsUseCase.swift */; };
-		3A327C0E2B25B61F008289FF /* RegisterCustomerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C0D2B25B61F008289FF /* RegisterCustomerUseCase.swift */; };
-		3A327C102B25B624008289FF /* PlaceOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C0F2B25B624008289FF /* PlaceOrderUseCase.swift */; };
-		3A327C172B25B677008289FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C162B25B677008289FF /* LoginViewModel.swift */; };
 		3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C1A2B25B6BB008289FF /* LoginView.swift */; };
 		3A327C1D2B25B778008289FF /* InMemoryAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C1C2B25B778008289FF /* InMemoryAuthenticationService.swift */; };
-		3A3766E52B354B310067E363 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3766E42B354B310067E363 /* UseCase.swift */; };
 		3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A605C8C2A8E27350053496F /* SuperDishApp.swift */; };
 		3A605C912A8E27370053496F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A605C902A8E27370053496F /* Assets.xcassets */; };
 		3A605C942A8E27370053496F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A605C932A8E27370053496F /* Preview Assets.xcassets */; };
-		3A605CAD2A8F46A90053496F /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A605CAC2A8F46A90053496F /* LoginViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,29 +25,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A327BF82B25B568008289FF /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		3A327BFA2B25B577008289FF /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		3A327BFC2B25B57D008289FF /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
-		3A327BFE2B25B585008289FF /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
-		3A327C002B25B58D008289FF /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
-		3A327C022B25B593008289FF /* PaymentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetails.swift; sourceTree = "<group>"; };
-		3A327C062B25B59E008289FF /* DeliveryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetails.swift; sourceTree = "<group>"; };
-		3A327C092B25B613008289FF /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
-		3A327C0B2B25B618008289FF /* FetchRestaurantsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRestaurantsUseCase.swift; sourceTree = "<group>"; };
-		3A327C0D2B25B61F008289FF /* RegisterCustomerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCustomerUseCase.swift; sourceTree = "<group>"; };
-		3A327C0F2B25B624008289FF /* PlaceOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderUseCase.swift; sourceTree = "<group>"; };
-		3A327C162B25B677008289FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3A327C1A2B25B6BB008289FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A327C1C2B25B778008289FF /* InMemoryAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAuthenticationService.swift; sourceTree = "<group>"; };
 		3A3766E32B34434F0067E363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3A3766E42B354B310067E363 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		3A3766E62B3550BB0067E363 /* MainDish */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MainDish; sourceTree = "<group>"; };
 		3A605C892A8E27350053496F /* SuperDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A605C8C2A8E27350053496F /* SuperDishApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperDishApp.swift; sourceTree = "<group>"; };
 		3A605C902A8E27370053496F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A605C932A8E27370053496F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A605C9A2A8E27370053496F /* SuperDish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperDish.entitlements; sourceTree = "<group>"; };
 		3A605CAA2A8F46A90053496F /* SuperDishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperDishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A605CAC2A8F46A90053496F /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,49 +55,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A327C082B25B5FA008289FF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3A327C062B25B59E008289FF /* DeliveryDetails.swift */,
-				3A327C022B25B593008289FF /* PaymentDetails.swift */,
-				3A327C002B25B58D008289FF /* OrderItem.swift */,
-				3A327BFE2B25B585008289FF /* Order.swift */,
-				3A327BFC2B25B57D008289FF /* Customer.swift */,
-				3A327BFA2B25B577008289FF /* Restaurant.swift */,
-				3A327BF82B25B568008289FF /* MenuItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3A327C112B25B64D008289FF /* Use Cases */ = {
-			isa = PBXGroup;
-			children = (
-				3A327C0F2B25B624008289FF /* PlaceOrderUseCase.swift */,
-				3A327C0D2B25B61F008289FF /* RegisterCustomerUseCase.swift */,
-				3A327C0B2B25B618008289FF /* FetchRestaurantsUseCase.swift */,
-				3A327C092B25B613008289FF /* LoginUseCase.swift */,
-				3A3766E42B354B310067E363 /* UseCase.swift */,
-			);
-			path = "Use Cases";
-			sourceTree = "<group>";
-		};
-		3A327C122B25B659008289FF /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				3A327C112B25B64D008289FF /* Use Cases */,
-				3A327C082B25B5FA008289FF /* Models */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		3A327C132B25B65E008289FF /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				3A327C162B25B677008289FF /* LoginViewModel.swift */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		3A327C142B25B665008289FF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +74,7 @@
 		3A605C802A8E27350053496F = {
 			isa = PBXGroup;
 			children = (
+				3A3766E62B3550BB0067E363 /* MainDish */,
 				3A605C8B2A8E27350053496F /* SuperDish */,
 				3A605CAB2A8F46A90053496F /* SuperDishTests */,
 				3A605C8A2A8E27350053496F /* Products */,
@@ -166,8 +97,6 @@
 				3A605C8C2A8E27350053496F /* SuperDishApp.swift */,
 				3A327C152B25B669008289FF /* Infrastructure */,
 				3A327C142B25B665008289FF /* UI */,
-				3A327C132B25B65E008289FF /* Presentation */,
-				3A327C122B25B659008289FF /* Domain */,
 				3A605C902A8E27370053496F /* Assets.xcassets */,
 				3A605C9A2A8E27370053496F /* SuperDish.entitlements */,
 				3A605C922A8E27370053496F /* Preview Content */,
@@ -186,7 +115,6 @@
 		3A605CAB2A8F46A90053496F /* SuperDishTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A605CAC2A8F46A90053496F /* LoginViewModelTests.swift */,
 			);
 			path = SuperDishTests;
 			sourceTree = "<group>";
@@ -291,22 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A327BF92B25B568008289FF /* MenuItem.swift in Sources */,
-				3A3766E52B354B310067E363 /* UseCase.swift in Sources */,
-				3A327C0C2B25B618008289FF /* FetchRestaurantsUseCase.swift in Sources */,
 				3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */,
 				3A327C1D2B25B778008289FF /* InMemoryAuthenticationService.swift in Sources */,
 				3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */,
-				3A327BFF2B25B585008289FF /* Order.swift in Sources */,
-				3A327BFB2B25B577008289FF /* Restaurant.swift in Sources */,
-				3A327BFD2B25B57D008289FF /* Customer.swift in Sources */,
-				3A327C072B25B59E008289FF /* DeliveryDetails.swift in Sources */,
-				3A327C012B25B58D008289FF /* OrderItem.swift in Sources */,
-				3A327C172B25B677008289FF /* LoginViewModel.swift in Sources */,
-				3A327C102B25B624008289FF /* PlaceOrderUseCase.swift in Sources */,
-				3A327C0E2B25B61F008289FF /* RegisterCustomerUseCase.swift in Sources */,
-				3A327C032B25B593008289FF /* PaymentDetails.swift in Sources */,
-				3A327C0A2B25B613008289FF /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A605CAD2A8F46A90053496F /* LoginViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +377,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -499,6 +414,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

@@ -6,10 +6,11 @@
 //
 
 import XCTest
-import SuperDish
+import MainDish
 
 @MainActor
 final class LoginViewModelTests: XCTestCase {
+    
     func testLoginSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
         let sut = LoginViewModel(
