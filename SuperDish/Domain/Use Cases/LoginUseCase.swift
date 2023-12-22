@@ -10,3 +10,19 @@ import Foundation
 public protocol LoginUseCase {
     func login(email: String, password: String) async throws
 }
+
+
+public struct LoginRequest {
+    public let email: String
+    public let password: String
+}
+
+extension UseCase: LoginUseCase where Input == LoginRequest, Output == Void {
+    public func login(email: String, password: String) async throws {
+        try await execute(LoginRequest(email: email, password: password))
+    }
+}
+
+public struct InvalidCredentialsException: Error {
+    public init() {}
+}

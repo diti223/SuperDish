@@ -10,10 +10,10 @@ import Combine
 
 @MainActor
 public class LoginViewModel: ObservableObject {
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var errorMessage: String?
-    @Published var hasFinishedLogin: Bool = false
+    @Published public var email: String = ""
+    @Published public var password: String = ""
+    @Published public var errorMessage: String?
+    @Published public var hasFinishedLogin: Bool = false
     
     private var loginUseCase: LoginUseCase
     private var registerUseCase: RegisterCustomerUseCase
