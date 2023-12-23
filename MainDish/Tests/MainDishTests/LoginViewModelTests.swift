@@ -11,6 +11,13 @@ import MainDish
 @MainActor
 final class LoginViewModelTests: XCTestCase {
     
+    func testInitialState() {
+        let sut = makeSUT()
+        XCTAssertNil(sut.errorMessage)
+        XCTAssertEqual(sut.email, "")
+        XCTAssertEqual(sut.password, "")
+    }
+    
     func testLoginSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
         let sut = makeSUT(loginUseCase: UseCaseSender { _ in
