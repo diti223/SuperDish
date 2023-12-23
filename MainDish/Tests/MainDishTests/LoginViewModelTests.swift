@@ -17,12 +17,38 @@ final class LoginViewModelTests: XCTestCase {
             loginUseCase: UseCaseSender { _ in
                 throw InvalidCredentialsException()
             },
-            registerUseCase: UseCaseSender { _ in}
+            registerUseCase: UseCaseSender { _ in }
         )
+        sut.email = "someEmail"
+        sut.password = "somePass"
         
         await sut.loginSelected()
         
         XCTAssertEqual(sut.errorMessage, "Invalid credentials")
+    }
+    
+    func testLoginSelected_EmptyFields_DisplaysEmptyFieldErrorMessage() async {
+        let sut = LoginViewModel(
+            loginUseCase: UseCaseSender { _ in },
+            registerUseCase: UseCaseSender { _ in }
+        )
+        
+        await sut.loginSelected()
+        
+        XCTAssertEqual(sut.errorMessage, "Fields are empty")
+    }
+    
+    func testLoginSelected_SuccessResponse_PublishesFinishEvent() async {
+        let sut = LoginViewModel(
+            loginUseCase: UseCaseSender { _ in },
+            registerUseCase: UseCaseSender { _ in }
+        )
+        sut.email = "someEmail"
+        sut.password = "somePass"
+        
+        await sut.loginSelected()
+        
+        XCTAssertEqual(sut.hasFinishedLogin, true, "Expected to finish login")
     }
 }
 

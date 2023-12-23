@@ -34,11 +34,11 @@ public class LoginViewModel: ObservableObject {
     }
     
     public func loginSelected() async {
-        guard hasValidCredentials else {
-            errorMessage = "Invalid credentials"
+        guard !hasEmptyField else {
+            errorMessage = "Fields are empty"
             return
         }
-        
+
         do {
             try await loginUseCase.login(email: email, password: password)
             hasFinishedLogin = true
