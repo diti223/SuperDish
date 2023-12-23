@@ -58,6 +58,45 @@ final class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(sut.hasFinishedLogin, true, "Expected to finish login")
     }
     
+    // MARK: - Test Register Use Case
+    func testRegisterSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
+        
+        let sut = makeValidSUT(registerUseCase: UseCaseSender { _ in
+            throw InvalidCredentialsException()
+        })
+        
+        await sut.register()
+        
+        XCTAssertEqual(sut.errorMessage, "Invalid credentials")
+    }
+    
+    func testRegisterSelected_EmptyFields_DisplaysEmptyFieldErrorMessage() async {
+        let sut = makeSUT()
+        
+        await sut.register()
+        
+        XCTAssertEqual(sut.errorMessage, "Fields are empty")
+    }
+    
+    func testRegisterSelected_ValidFields_InvokesLoginUseCase() async {
+        var invokedRegisterCount = 0
+        let sut = makeValidSUT(registerUseCase: UseCaseSender { _ in
+            invokedRegisterCount += 1
+        })
+        
+        await sut.register()
+        
+        XCTAssertEqual(invokedRegisterCount, 1)
+    }
+    
+    func testRegisterSelected_SuccessResponse_PublishesFinishEvent() async {
+        let sut = makeValidSUT()
+        
+        await sut.register()
+        
+        XCTAssertEqual(sut.hasFinishedRegister, true, "Expected to finish login")
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(loginUseCase: LoginUseCase = UseCaseSender { _ in }, registerUseCase: RegisterCustomerUseCase = UseCaseSender { _ in }) -> LoginViewModel {
