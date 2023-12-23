@@ -11,6 +11,7 @@ import MainDish
 @MainActor
 final class LoginViewModelTests: XCTestCase {
     
+    // MARK: - Test Initial State
     func testInitialState() {
         let sut = makeSUT()
         XCTAssertNil(sut.errorMessage)
@@ -18,12 +19,12 @@ final class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(sut.password, "")
     }
     
+    // MARK: - Test Login Use Case
     func testLoginSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
-        let sut = makeSUT(loginUseCase: UseCaseSender { _ in
+        let sut = makeValidSUT(loginUseCase: UseCaseSender { _ in
             throw InvalidCredentialsException()
         })
-        fillInValidCredentials(sut)
         
         await sut.loginSelected()
         
@@ -38,14 +39,26 @@ final class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(sut.errorMessage, "Fields are empty")
     }
     
+    func testLoginSelected_ValidFields_InvokesLoginUseCase() async {
+        var invokedLoginCount = 0
+        let sut = makeValidSUT(loginUseCase: UseCaseSender { _ in
+            invokedLoginCount += 1
+        })
+        
+        await sut.loginSelected()
+        
+        XCTAssertEqual(invokedLoginCount, 1)
+    }
+    
     func testLoginSelected_SuccessResponse_PublishesFinishEvent() async {
-        let sut = makeSUT()
-        fillInValidCredentials(sut)
+        let sut = makeValidSUT()
         
         await sut.loginSelected()
         
         XCTAssertEqual(sut.hasFinishedLogin, true, "Expected to finish login")
     }
+    
+    // MARK: - Helpers
     
     private func makeSUT(loginUseCase: LoginUseCase = UseCaseSender { _ in }, registerUseCase: RegisterCustomerUseCase = UseCaseSender { _ in }) -> LoginViewModel {
         let sut = LoginViewModel(
@@ -55,6 +68,14 @@ final class LoginViewModelTests: XCTestCase {
         
         return sut
     }
+    
+    private func makeValidSUT(loginUseCase: LoginUseCase = UseCaseSender { _ in }, registerUseCase: RegisterCustomerUseCase = UseCaseSender { _ in }) -> LoginViewModel {
+        let sut = makeSUT(loginUseCase: loginUseCase, registerUseCase: registerUseCase)
+        fillInValidCredentials(sut)
+        
+        return sut
+    }
+    
     
     private func fillInValidCredentials(_ sut: LoginViewModel) {
         sut.email = "someEmail"
