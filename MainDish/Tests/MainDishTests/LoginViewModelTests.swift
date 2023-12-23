@@ -13,14 +13,10 @@ final class LoginViewModelTests: XCTestCase {
     
     func testLoginSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
-        let sut = LoginViewModel(
-            loginUseCase: UseCaseSender { _ in
-                throw InvalidCredentialsException()
-            },
-            registerUseCase: UseCaseSender { _ in }
-        )
-        sut.email = "someEmail"
-        sut.password = "somePass"
+        let sut = makeSUT(loginUseCase: UseCaseSender { _ in
+            throw InvalidCredentialsException()
+        })
+        fillInValidCredentials(sut)
         
         await sut.loginSelected()
         
@@ -28,10 +24,7 @@ final class LoginViewModelTests: XCTestCase {
     }
     
     func testLoginSelected_EmptyFields_DisplaysEmptyFieldErrorMessage() async {
-        let sut = LoginViewModel(
-            loginUseCase: UseCaseSender { _ in },
-            registerUseCase: UseCaseSender { _ in }
-        )
+        let sut = makeSUT()
         
         await sut.loginSelected()
         
@@ -39,17 +32,28 @@ final class LoginViewModelTests: XCTestCase {
     }
     
     func testLoginSelected_SuccessResponse_PublishesFinishEvent() async {
-        let sut = LoginViewModel(
-            loginUseCase: UseCaseSender { _ in },
-            registerUseCase: UseCaseSender { _ in }
-        )
-        sut.email = "someEmail"
-        sut.password = "somePass"
+        let sut = makeSUT()
+        fillInValidCredentials(sut)
         
         await sut.loginSelected()
         
         XCTAssertEqual(sut.hasFinishedLogin, true, "Expected to finish login")
     }
+    
+    private func makeSUT(loginUseCase: LoginUseCase = UseCaseSender { _ in }, registerUseCase: RegisterCustomerUseCase = UseCaseSender { _ in }) -> LoginViewModel {
+        let sut = LoginViewModel(
+            loginUseCase: loginUseCase,
+            registerUseCase: registerUseCase
+        )
+        
+        return sut
+    }
+    
+    private func fillInValidCredentials(_ sut: LoginViewModel) {
+        sut.email = "someEmail"
+        sut.password = "somePass"
+    }
+    
 }
 
 
