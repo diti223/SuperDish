@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct SuperDishApp: App {
     let inMemoryService = InMemoryAuthenticationService()
+    @StateObject var appFlow: AppFlow
     var body: some Scene {
         WindowGroup {
             LoginView(viewModel: LoginViewModel(loginUseCase: inMemoryService, registerUseCase: inMemoryService))
         }
     }
 }
+
+
