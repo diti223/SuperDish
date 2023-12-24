@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Customer {
-    let id: UUID
-    var name: String
-    var email: String
-    var deliveryAddress: String
+    public let id: UUID
+    public var name: String
+    public var email: String
+    public var deliveryAddress: String
 }

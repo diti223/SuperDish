@@ -8,6 +8,8 @@
 import Foundation
 
 class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
+    static let shared = InMemoryAuthenticationService()
+    
     struct RegisteredUser {
         let email: String
         let password: String

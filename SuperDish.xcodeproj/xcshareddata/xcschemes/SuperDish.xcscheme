@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MainDish"
+               BuildableName = "MainDish"
+               BlueprintName = "MainDish"
+               ReferencedContainer = "container:MainDish">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A605C882A8E27350053496F"
                BuildableName = "SuperDish.app"
                BlueprintName = "SuperDish"

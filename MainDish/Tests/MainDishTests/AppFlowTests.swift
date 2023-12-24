@@ -10,34 +10,21 @@ import XCTest
 import MainDish
 
 @MainActor
-class AppFlow {
-    var loginViewModel: LoginViewModel?
-    
-    func start() {
-        loginViewModel = LoginViewModel(loginUseCase: UseCaseSender.makeEmpty(), registerUseCase: UseCaseSender.makeEmpty())
-    }
-}
-
-extension UseCaseSender {
-    static func makeEmpty() -> UseCaseSender<Input> {
-        UseCaseSender { input in
-            
-        }
-    }
-}
-
-@MainActor
 class AppFlowTests: XCTestCase {
     func testInit() {
-        let sut = AppFlow()
+        let sut = makeSUT()
         XCTAssertNil(sut.loginViewModel)
     }
     
     func testOnStart() {
-        let sut = AppFlow()
+        let sut = makeSUT()
         
         sut.start()
         
         XCTAssertNotNil(sut.loginViewModel)
+    }
+    
+    private func makeSUT() -> AppFlow {
+        AppFlow(loginUseCase: UseCaseSender.makeEmpty(), registerUseCase: UseCaseSender.makeEmpty())
     }
 }

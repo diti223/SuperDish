@@ -6,14 +6,27 @@
 //
 
 import SwiftUI
+import MainDish
 
 @main
 struct SuperDishApp: App {
-    let inMemoryService = InMemoryAuthenticationService()
-    @StateObject var appFlow: AppFlow
+
+    
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel(loginUseCase: inMemoryService, registerUseCase: inMemoryService))
+//            if let loginViewModel = appFlow.loginViewModel {
+//                LoginView(viewModel: loginViewModel)
+//            }
+            
+        }
+        .onChange(of: scenePhase) { (oldPhase, newPhase) in
+            
+//            let appFlow = AppFlow(loginUseCase: InMemoryAuthenticationService.shared, registerUseCase: InMemoryAuthenticationService.shared)
+//            if case .active = newPhase {
+//                appFlow.start()
+//            }
         }
     }
 }

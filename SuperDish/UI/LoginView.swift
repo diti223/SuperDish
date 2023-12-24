@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MainDish
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
@@ -41,27 +42,16 @@ struct LoginView: View {
             .padding()
         }
         .padding()
-        .alert(isPresented: $viewModel.hasFinishedLogin, content: {
-            Alert(title: Text("User has been authenticated"))
-        })
+//        .alert(isPresented: $viewModel.hasFinishedLogin, content: {
+//            Alert(title: Text("User has been authenticated"))
+//        })
     }
 }
 
-#Preview {
-    LoginView(viewModel: LoginViewModel(
-        loginUseCase: DummyLoginUseCase(),
-        registerUseCase: DummyRegisterCustomerUseCase())
-    )
-}
-
-struct DummyLoginUseCase: LoginUseCase {
-    func login(email: String, password: String) async throws {
-        
-    }
-}
-
-struct DummyRegisterCustomerUseCase: RegisterCustomerUseCase {
-    func register(customer: Customer, password: String) async throws {
-        
-    }
-}
+//#Preview {
+//    LoginView(viewModel: LoginViewModel(
+//        loginUseCase: UseCaseSender.makeEmpty(),
+//        registerUseCase: UseCaseSender.makeEmpty())
+//    )
+//}
+//
