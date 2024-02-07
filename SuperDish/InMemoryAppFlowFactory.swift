@@ -9,11 +9,12 @@ import Foundation
 import MainDish
 
 enum InMemoryAppFlowFactory {
+    static let inMemoryService = InMemoryAuthenticationService()
     @MainActor
     static func makeAppFlow() -> AppFlow {
         AppFlow(
-            loginUseCase: InMemoryAuthenticationService.shared,
-            registerUseCase: InMemoryAuthenticationService.shared
+            loginUseCase: inMemoryService,
+            registerUseCase: inMemoryService
         )
     }
 }
