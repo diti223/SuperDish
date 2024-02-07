@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "0369557D-A5D6-4FA5-8DE6-CB3A359F7D54",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "MainDishTests",
+        "name" : "MainDishTests"
+      }
+    }
+  ],
+  "version" : 1
+}

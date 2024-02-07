@@ -29,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAppFlowFactory.swift; sourceTree = "<group>"; };
 		3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAppFlowFactory.swift; sourceTree = "<group>"; };
+		3A31BEA22B73E03700872640 /* MainDish.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainDish.xctestplan; sourceTree = "<group>"; };
 		3A327C1A2B25B6BB008289FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A3766E32B34434F0067E363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A3766E62B3550BB0067E363 /* MainDish */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MainDish; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		3A605C802A8E27350053496F = {
 			isa = PBXGroup;
 			children = (
+				3A31BEA22B73E03700872640 /* MainDish.xctestplan */,
 				3A3766E62B3550BB0067E363 /* MainDish */,
 				3A605C8B2A8E27350053496F /* SuperDish */,
 				3A605CAB2A8F46A90053496F /* SuperDishTests */,
