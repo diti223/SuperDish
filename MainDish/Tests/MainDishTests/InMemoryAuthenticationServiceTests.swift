@@ -32,12 +32,12 @@ class InMemoryAuthenticationServiceTests: XCTestCase {
         XCTAssertEqual(sut.users[0].email, "john@doe.com")
     }
     
-    func testOnLogin_MissingUser_ThrowsInvalidUserException() async throws {
+    func testOnLogin_MissingUser_ThrowsLoginFailedException() async throws {
         let sut = makeSUT()
         
         await XCTAssertThrowsAsyncError(
             try await sut.login(email: "any email", password: "whatever"),
-            InvalidUserException.self
+            LoginFailedException.self
         )
     }
     
@@ -67,8 +67,10 @@ class InMemoryAuthenticationServiceTests: XCTestCase {
     }
     
     //TODO:
-    // invalid email
-    // invalid password
+    // invalid email, invalid password
+    // valid email, invalid password
+    // invalid email, valid password
+    // valid email, valid password
     // register user with existing email should throw exception
     
     //MARK: -

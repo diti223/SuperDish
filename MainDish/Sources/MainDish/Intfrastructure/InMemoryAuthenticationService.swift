@@ -24,11 +24,11 @@ public class InMemoryAuthenticationService {
         if Set(users.map(\.email)).contains(email) {
             return
         }
-        throw InvalidUserException()
+        throw LoginFailedException()
     }
 }
 
-public struct InvalidUserException: Error {}
+public struct LoginFailedException: Error {}
 
 //public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
 //    public static let shared = InMemoryAuthenticationService()
