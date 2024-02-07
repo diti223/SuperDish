@@ -8,13 +8,17 @@
 import Foundation
 
 
-public struct InMemoryAuthenticationService {
+public class InMemoryAuthenticationService {
     public struct RegisteredUser: Equatable {
         public let email: String
     }
     
-    public let users: [RegisteredUser] = []
+    public var users: [RegisteredUser] = []
     public init() {}
+    
+    public func register(customer: Customer, password: String) async throws {
+        users.append(RegisteredUser(email: customer.email))
+    }
 }
 
 //public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {

@@ -12,4 +12,11 @@ public struct Customer {
     public var name: String
     public var email: String
     public var deliveryAddress: String
+    
+    public init(id: UUID, name: String, email: String, deliveryAddress: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.deliveryAddress = deliveryAddress
+    }
 }
