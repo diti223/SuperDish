@@ -17,9 +17,11 @@ public struct LoginRequest {
     public let password: String
 }
 
-extension UseCase: LoginUseCase where Input == LoginRequest, Output == Void {
+extension UseCase<LoginRequest, Void>: LoginUseCase {
     public func login(email: String, password: String) async throws {
-        try await execute(LoginRequest(email: email, password: password))
+        try await execute(
+            LoginRequest(email: email, password: password)
+        )
     }
 }
 

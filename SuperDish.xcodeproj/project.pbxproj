@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A31BE9D2B73DFA100872640 /* MainDish in Frameworks */ = {isa = PBXBuildFile; productRef = 3A31BE9C2B73DFA100872640 /* MainDish */; };
+		3A31BE9F2B73DFCE00872640 /* InMemoryAppFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */; };
+		3A31BEA12B73DFE000872640 /* DummyAppFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */; };
 		3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C1A2B25B6BB008289FF /* LoginView.swift */; };
 		3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A605C8C2A8E27350053496F /* SuperDishApp.swift */; };
 		3A605C912A8E27370053496F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A605C902A8E27370053496F /* Assets.xcassets */; };
@@ -24,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAppFlowFactory.swift; sourceTree = "<group>"; };
+		3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAppFlowFactory.swift; sourceTree = "<group>"; };
 		3A327C1A2B25B6BB008289FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A3766E32B34434F0067E363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A3766E62B3550BB0067E363 /* MainDish */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MainDish; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A31BE9D2B73DFA100872640 /* MainDish in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +59,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A31BE9B2B73DFA100872640 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A327C142B25B665008289FF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +81,7 @@
 				3A605C8B2A8E27350053496F /* SuperDish */,
 				3A605CAB2A8F46A90053496F /* SuperDishTests */,
 				3A605C8A2A8E27350053496F /* Products */,
+				3A31BE9B2B73DFA100872640 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +99,8 @@
 			children = (
 				3A3766E32B34434F0067E363 /* Info.plist */,
 				3A605C8C2A8E27350053496F /* SuperDishApp.swift */,
+				3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */,
+				3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */,
 				3A327C142B25B665008289FF /* UI */,
 				3A605C902A8E27370053496F /* Assets.xcassets */,
 				3A605C9A2A8E27370053496F /* SuperDish.entitlements */,
@@ -124,6 +140,9 @@
 			dependencies = (
 			);
 			name = SuperDish;
+			packageProductDependencies = (
+				3A31BE9C2B73DFA100872640 /* MainDish */,
+			);
 			productName = SuperDish;
 			productReference = 3A605C892A8E27350053496F /* SuperDish.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +228,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */,
+				3A31BEA12B73DFE000872640 /* DummyAppFlowFactory.swift in Sources */,
+				3A31BE9F2B73DFCE00872640 /* InMemoryAppFlowFactory.swift in Sources */,
 				3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +391,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bilescu.SuperDish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +429,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bilescu.SuperDish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +512,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A31BE9C2B73DFA100872640 /* MainDish */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MainDish;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A605C812A8E27350053496F /* Project object */;
 }

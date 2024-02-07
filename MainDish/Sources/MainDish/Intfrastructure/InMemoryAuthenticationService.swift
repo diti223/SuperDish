@@ -7,8 +7,8 @@
 
 import Foundation
 
-class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
-    static let shared = InMemoryAuthenticationService()
+public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
+    public static let shared = InMemoryAuthenticationService()
     
     struct RegisteredUser {
         let email: String
@@ -18,13 +18,14 @@ class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
     struct InvalidCredentials: Error {}
     
     var users: [RegisteredUser] = []
-    func login(email: String, password: String) async throws {
+    
+    public func login(email: String, password: String) async throws {
         guard (users.first(where: { $0.email == email })?.password == password) else {
             throw InvalidCredentials()
         }
     }
     
-    func register(customer: Customer, password: String) async throws {
+    public func register(customer: Customer, password: String) async throws {
         users.append(RegisteredUser(email: customer.email, password: password))
     }
 }

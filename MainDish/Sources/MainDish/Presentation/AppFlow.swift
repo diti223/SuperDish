@@ -20,6 +20,9 @@ public class AppFlow: ObservableObject {
     }
     
     public func start() {
-        loginViewModel = LoginViewModel(loginUseCase: loginUseCase, registerUseCase: registerUseCase)
+        loginViewModel = LoginViewModel(
+            loginUseCase: loginUseCase,
+            registerUseCase: registerUseCase
+        )
     }
 }
