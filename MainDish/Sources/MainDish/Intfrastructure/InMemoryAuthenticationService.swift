@@ -19,7 +19,13 @@ public class InMemoryAuthenticationService {
     public func register(customer: Customer, password: String) async throws {
         users.append(RegisteredUser(email: customer.email))
     }
+    
+    public func login(email: String, password: String) async throws {
+        throw InvalidUserException()
+    }
 }
+
+public struct InvalidUserException: Error {}
 
 //public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
 //    public static let shared = InMemoryAuthenticationService()
