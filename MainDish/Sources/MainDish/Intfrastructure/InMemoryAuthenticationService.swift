@@ -21,6 +21,9 @@ public class InMemoryAuthenticationService {
     }
     
     public func login(email: String, password: String) async throws {
+        if Set(users.map(\.email)).contains(email) {
+            return
+        }
         throw InvalidUserException()
     }
 }

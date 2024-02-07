@@ -20,12 +20,7 @@ class InMemoryAuthenticationServiceTests: XCTestCase {
         let sut = makeSUT()
         
         let email = "john@doe.com"
-        let customer = Customer(
-            id: UUID(),
-            name: "any name",
-            email: email,
-            deliveryAddress: "any address"
-        )
+        let customer = makeCustomer(email: email)
         
         // when
         try await sut.register(
@@ -46,7 +41,38 @@ class InMemoryAuthenticationServiceTests: XCTestCase {
         )
     }
     
-    func makeSUT() -> InMemoryAuthenticationService {
+    func testOnLogin_ExistingUsers_ValidCredentials_ThrowsNoError() async throws {
+        // given
+        let sut = makeSUT()
+        
+        let email = "john@doe.com"
+        let password = "someStrongPasswordHere"
+        let customer = makeCustomer(email: email)
+        try await sut.register(customer: customer, password: password)
+        
+        // when
+        await XCTAssertNoThrowAsync(
+            try await sut.login(email: email, password: password),
+            "Expected no error for valid login credentials"
+        )
+    }
+    
+    private func makeCustomer(email: String) -> Customer {
+        Customer(
+            id: UUID(),
+            name: "any name",
+            email: email,
+            deliveryAddress: "any address"
+        )
+    }
+    
+    //TODO:
+    // invalid email
+    // invalid password
+    // register user with existing email should throw exception
+    
+    //MARK: -
+    private func makeSUT() -> InMemoryAuthenticationService {
         InMemoryAuthenticationService()
     }
 }
