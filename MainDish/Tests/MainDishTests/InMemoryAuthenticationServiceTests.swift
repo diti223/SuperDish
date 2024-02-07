@@ -41,6 +41,23 @@ class InMemoryAuthenticationServiceTests: XCTestCase {
         )
     }
     
+    func testOnLogin_ExistingUsers_InvalidPassword_ThrowLoginFailedException() async throws {
+        // given
+        let sut = makeSUT()
+        
+        let email = "john@doe.com"
+        let password = "someStrongPasswordHere"
+        let customer = makeCustomer(email: email)
+        try await sut.register(customer: customer, password: password)
+        
+        // when
+        await XCTAssertThrowsAsyncError(
+            try await sut.login(email: email, password: "invalid passowrd"),
+            LoginFailedException.self,
+            "Expected no error for valid login credentials"
+        )
+    }
+    
     func testOnLogin_ExistingUsers_ValidCredentials_ThrowsNoError() async throws {
         // given
         let sut = makeSUT()
