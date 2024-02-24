@@ -8,7 +8,6 @@
 import XCTest
 import MainDish
 
-@MainActor
 final class LoginViewModelTests: XCTestCase {
     
     // MARK: - Test Initial State
@@ -23,7 +22,7 @@ final class LoginViewModelTests: XCTestCase {
     func testLoginSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
         let sut = makeValidSUT(loginUseCase: UseCaseSender { _ in
-            throw InvalidCredentialsException()
+            throw LoginFailedException()
         })
         
         await sut.loginSelected()
@@ -62,7 +61,7 @@ final class LoginViewModelTests: XCTestCase {
     func testRegisterSelected_ThrowingInvalidCredentials_DisplaysErrorMessage() async throws {
         
         let sut = makeValidSUT(registerUseCase: UseCaseSender { _ in
-            throw InvalidCredentialsException()
+            throw LoginFailedException()
         })
         
         await sut.register()

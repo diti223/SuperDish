@@ -12,7 +12,7 @@ import MainDish
 struct SuperDishApp: App {
 
     #if DEBUG
-    @StateObject var appFlow = DummyAppFlowFactory.makeAppFlow()
+    @StateObject var appFlow = InMemoryAppFlowFactory.makeAppFlow()
     #else
     @StateObject var appFlow = InMemoryAppFlowFactory.makeAppFlow()
     #endif
@@ -22,6 +22,11 @@ struct SuperDishApp: App {
         WindowGroup {
             if let viewModel = appFlow.loginViewModel {
                 LoginView(viewModel: viewModel)
+            } else {
+                Color.clear
+                    .onAppear(perform: {
+                        appFlow.start()
+                    })
             }
         }
         .onChange(of: scenePhase) { (oldPhase, newPhase) in
@@ -31,6 +36,3 @@ struct SuperDishApp: App {
         }
     }
 }
-
-
-

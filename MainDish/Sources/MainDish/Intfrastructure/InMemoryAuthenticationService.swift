@@ -34,5 +34,3 @@ public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCas
         throw LoginFailedException()
     }
 }
-
-public struct LoginFailedException: Error {}

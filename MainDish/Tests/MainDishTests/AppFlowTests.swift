@@ -9,7 +9,6 @@ import Foundation
 import XCTest
 import MainDish
 
-@MainActor
 class AppFlowTests: XCTestCase {
     func testInit() {
         let sut = makeSUT()

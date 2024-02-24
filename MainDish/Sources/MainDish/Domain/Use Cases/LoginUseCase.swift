@@ -25,6 +25,6 @@ extension UseCase<LoginRequest, Void>: LoginUseCase {
     }
 }
 
-public struct InvalidCredentialsException: Error {
+public struct LoginFailedException: Error {
     public init() {}
 }

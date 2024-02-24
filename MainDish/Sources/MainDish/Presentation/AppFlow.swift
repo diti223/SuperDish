@@ -7,10 +7,8 @@
 
 import Foundation
 
-@MainActor
-final
-public class AppFlow: ObservableObject {
-    public private(set) var loginViewModel: LoginViewModel?
+final public class AppFlow: ObservableObject {
+    @Published public private(set) var loginViewModel: LoginViewModel?
     private let loginUseCase: LoginUseCase
     private let registerUseCase: RegisterCustomerUseCase
     
