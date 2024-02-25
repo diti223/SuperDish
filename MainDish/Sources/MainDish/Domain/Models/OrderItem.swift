@@ -8,7 +8,7 @@
 import Foundation
 
 struct OrderItem {
-    let menuItemId: UUID
+    let menuItem: MenuItem
     var quantity: Int
     var specialInstructions: String?
 }

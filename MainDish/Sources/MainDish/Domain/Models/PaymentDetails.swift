@@ -16,7 +16,7 @@ struct PaymentDetails {
 
 enum PaymentMethod {
     case creditCard
-    case paypal
+    case payPal
     case applePay
 }
 

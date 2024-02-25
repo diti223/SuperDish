@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PlaceOrderUseCase {
-    func place(order: Order) async throws
+    func place(order: Order, payment: PaymentDetails) async throws
 }

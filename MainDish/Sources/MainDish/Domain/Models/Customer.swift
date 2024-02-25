@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Customer {
+public struct Customer: Identifiable {
     public let id: UUID
     public var name: String
     public var email: String

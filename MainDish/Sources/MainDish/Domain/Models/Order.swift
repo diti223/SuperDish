@@ -8,6 +8,7 @@
 import Foundation
 
 enum OrderStatus {
+    case notPlaced
     case pending
     case confirmed
     case inPreparation
@@ -16,11 +17,9 @@ enum OrderStatus {
     case cancelled
 }
 
-struct Order {
+struct Order: Identifiable {
     let id: UUID
-    let customerId: UUID
     var items: [OrderItem]
     var paymentDetails: PaymentDetails
     var deliveryDetails: DeliveryDetails
-    var status: OrderStatus
 }
