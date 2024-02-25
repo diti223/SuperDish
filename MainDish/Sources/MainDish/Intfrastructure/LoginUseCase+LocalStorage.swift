@@ -7,17 +7,6 @@
 
 import Foundation
 
-public protocol LocalStorage {
-    func store<T>(value: T?, for key: String)
-    func fetch<T>(for key: String) -> T?
-}
-
-extension LocalStorage {
-    subscript<T>(_ key: String) -> T? {
-        fetch(for: key)
-    }
-}
-
 extension LoginUseCase {
     func addPersistence(storage: LocalStorage, authenticatedEmailKey: String) -> LoginUseCase {
         LoginPersistenceDecorator(

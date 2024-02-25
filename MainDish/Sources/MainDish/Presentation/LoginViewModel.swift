@@ -27,6 +27,7 @@ public class LoginViewModel: ObservableObject {
         self.registerUseCase = registerUseCase
     }
     
+    @MainActor
     public func loginSelected() async {
         errorMessage = ""
         guard !hasEmptyField else {
@@ -45,6 +46,7 @@ public class LoginViewModel: ObservableObject {
         } catch {}
     }
     
+    @MainActor
     public func register() async {
         errorMessage = ""
         guard !hasEmptyField else {

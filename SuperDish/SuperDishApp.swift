@@ -21,5 +21,6 @@ struct SuperDishApp: App {
         WindowGroup {
             AppContainerView(appFlow: appFlow)
         }
+        .defaultSize(width: 300, height: 200)
     }
 }

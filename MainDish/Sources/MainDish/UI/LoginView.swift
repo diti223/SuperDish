@@ -14,31 +14,28 @@ struct LoginView: View {
         VStack {
             TextField("Email", text: $viewModel.email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
             
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
             
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .padding()
             }
-            
-            Button("Login") {
-                Task {
-                    await viewModel.loginSelected()
-                }
+            HStack {
+                Button("Login") {
+                    Task {
+                        await viewModel.loginSelected()
+                    }
+                }.frame(minWidth: 140)
+                
+                Button("Register") {
+                    Task {
+                        await viewModel.register()
+                    }
+                }.frame(minWidth: 140)
             }
-            .padding()
-            
-            Button("Register") {
-                Task {
-                    await viewModel.register()
-                }
-            }
-            .padding()
         }
         .padding()
 //        .alert(isPresented: $viewModel.hasFinishedLogin, content: {
