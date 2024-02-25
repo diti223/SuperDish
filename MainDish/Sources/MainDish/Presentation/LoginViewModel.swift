@@ -12,8 +12,7 @@ public class LoginViewModel: ObservableObject {
     @Published public var email: String = ""
     @Published public var password: String = ""
     @Published public var errorMessage: String?
-    @Published public var hasFinishedLogin: Bool = false
-    @Published public var hasFinishedRegister: Bool = false
+    public var finishedPublisher = PassthroughSubject<Void, Never>()
     
     private var loginUseCase: LoginUseCase
     private var registerUseCase: RegisterCustomerUseCase
@@ -40,7 +39,7 @@ public class LoginViewModel: ObservableObject {
                 email: email,
                 password: password
             )
-            hasFinishedLogin = true
+            finishedPublisher.send()
         } catch is LoginFailedException {
             errorMessage = "Invalid credentials"
         } catch {}
@@ -64,7 +63,7 @@ public class LoginViewModel: ObservableObject {
                 ),
                 password: password
             )
-            hasFinishedRegister = true
+            finishedPublisher.send()
         } catch {
             errorMessage = "Invalid credentials"
         }

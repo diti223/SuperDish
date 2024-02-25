@@ -17,7 +17,7 @@ public struct RegisterRequest {
     public let password: String
 }
 
-extension UseCase: RegisterCustomerUseCase where Input == RegisterRequest, Output == Void {
+extension UseCaseSender<RegisterRequest>: RegisterCustomerUseCase {
     public func register(customer: Customer, password: String) async throws {
         try await execute(RegisterRequest(customer: customer, password: password))
     }

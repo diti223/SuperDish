@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MainDish
 
 struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel

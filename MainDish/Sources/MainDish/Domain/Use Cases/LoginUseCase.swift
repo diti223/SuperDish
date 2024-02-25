@@ -11,13 +11,12 @@ public protocol LoginUseCase {
     func login(email: String, password: String) async throws
 }
 
-
 public struct LoginRequest {
     public let email: String
     public let password: String
 }
 
-extension UseCase<LoginRequest, Void>: LoginUseCase {
+extension UseCaseSender<LoginRequest>: LoginUseCase {
     public func login(email: String, password: String) async throws {
         try await execute(
             LoginRequest(email: email, password: password)

@@ -10,3 +10,9 @@ import Foundation
 protocol FetchRestaurantsUseCase {
     func fetch() async throws -> [Restaurant]
 }
+
+extension UseCaseFetcher<[Restaurant]>: FetchRestaurantsUseCase {
+    func fetch() async throws -> [Restaurant] {
+        try await execute()
+    }
+}

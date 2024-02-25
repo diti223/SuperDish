@@ -16,23 +16,10 @@ struct SuperDishApp: App {
     #else
     @StateObject var appFlow = InMemoryAppFlowFactory.makeAppFlow()
     #endif
-    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            if let viewModel = appFlow.loginViewModel {
-                LoginView(viewModel: viewModel)
-            } else {
-                Color.clear
-                    .onAppear(perform: {
-                        appFlow.start()
-                    })
-            }
-        }
-        .onChange(of: scenePhase) { (oldPhase, newPhase) in
-            if case .active = newPhase {
-                appFlow.start()
-            }
+            AppContainerView(appFlow: appFlow)
         }
     }
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCase {
     public struct RegisteredUser: Equatable {
         public let email: String
@@ -27,10 +26,10 @@ public class InMemoryAuthenticationService: LoginUseCase, RegisterCustomerUseCas
             user.email == email && user.password == password
         }
         
-        if users.contains(where: containsUserCredentials) {
-            return
+        guard users.contains(where: containsUserCredentials) else {
+            throw LoginFailedException()
         }
         
-        throw LoginFailedException()
+        // success
     }
 }
