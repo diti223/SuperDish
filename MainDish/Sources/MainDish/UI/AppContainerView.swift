@@ -20,6 +20,8 @@ public struct AppContainerView: View {
         Group {
             if let viewModel = appFlow.loginViewModel {
                 LoginView(viewModel: viewModel)
+            } else if let homeFlow = appFlow.homeFlow {
+                HomeContainerView(homeFlow: homeFlow)
             } else {
                 Color.clear
                     .onAppear(perform: {

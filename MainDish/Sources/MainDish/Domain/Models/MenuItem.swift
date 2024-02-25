@@ -29,7 +29,7 @@ struct MenuItem: Identifiable {
 
 extension MenuItem {
     
-    var dummyJSON: Data {
+    static let dummyJSON: Data = {
 """
 [
   {
@@ -226,5 +226,5 @@ extension MenuItem {
   }
 ]
 """.data(using: .utf8)!
-    }
+    }()
 }

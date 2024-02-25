@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Restaurant: Identifiable {
+struct Restaurant: Identifiable, Decodable {
     let id: UUID
     var name: String
     var address: String
 }
 
 extension Restaurant {
-    var dummyJSON: Data {
+    static let dummyJSON: Data = {
 """
 [
   {
@@ -49,5 +49,5 @@ extension Restaurant {
   }
 ]
 """.data(using: .utf8)!
-    }
+    }()
 }

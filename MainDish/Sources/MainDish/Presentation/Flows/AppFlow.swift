@@ -10,6 +10,7 @@ import Combine
 
 final public class AppFlow: ObservableObject {
     @Published public private(set) var loginViewModel: LoginViewModel?
+    @Published public private(set) var homeFlow: HomeFlow?
     @Published public var authenticatedEmail: String?
     private let secureStorage: LocalStorage = UserDefaultsStorage(userDefaults: .standard)
     private let loginUseCase: LoginUseCase
@@ -25,16 +26,16 @@ final public class AppFlow: ObservableObject {
     }
     
     public func start() {
-        if let authenticatedEmail: String = secureStorage[Self.authenticatedEmailKey] {
-            self.authenticatedEmail = authenticatedEmail
+        if let email: String = secureStorage[Self.authenticatedEmailKey] {
+            startAuthorizedApp(email: email)
         } else {
             startAuthentication()
         }
     }
     
     
-    private func startAuthorizedApp() {
-        
+    private func startAuthorizedApp(email: String) {
+        self.homeFlow = HomeFlow(email: email)
     }
     
     private func startAuthentication() {
@@ -47,7 +48,7 @@ final public class AppFlow: ObservableObject {
         )
         
         loginViewModel?.finishedPublisher.sink { [weak self] in
-            self?.startAuthorizedApp()
+            self?.start()
         }
         .store(in: &subscribers)
     }

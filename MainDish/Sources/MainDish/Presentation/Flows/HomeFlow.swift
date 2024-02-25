@@ -9,10 +9,12 @@ import Foundation
 import Combine
 
 final public class HomeFlow: ObservableObject {
+    @Published var orderFlow: OrderFlow
     var email: String
     
     init(email: String) {
         self.email = email
+        self.orderFlow = OrderFlow()
     }
     
     // track order items and build an order
