@@ -4,21 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "MainDish",
+    name: "CookBook",
     platforms: [.iOS(.v17), .macOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MainDish",
-            targets: ["MainDish"]),
+            name: "CookBook",
+            targets: ["CookBook"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MainDish"),
+            name: "CookBook"),
         .testTarget(
-            name: "MainDishTests",
-            dependencies: ["MainDish"]),
+            name: "CookBookTests",
+            dependencies: ["CookBook"]),
     ]
 )

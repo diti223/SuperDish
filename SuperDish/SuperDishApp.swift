@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
-import MainDish
+import CookBook
 
 @main
 struct SuperDishApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Color.red
+            CookBookView(useCase: UseCase {
+                [
+                    Dish.spaghettiBolognese
+                ]
+            })
         }
     }
 }
-
-
-
