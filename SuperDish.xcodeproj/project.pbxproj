@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A31BE9D2B73DFA100872640 /* MainDish in Frameworks */ = {isa = PBXBuildFile; productRef = 3A31BE9C2B73DFA100872640 /* MainDish */; };
-		3A31BE9F2B73DFCE00872640 /* InMemoryAppFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */; };
-		3A31BEA12B73DFE000872640 /* DummyAppFlowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */; };
-		3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A327C1A2B25B6BB008289FF /* LoginView.swift */; };
 		3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A605C8C2A8E27350053496F /* SuperDishApp.swift */; };
 		3A605C912A8E27370053496F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A605C902A8E27370053496F /* Assets.xcassets */; };
 		3A605C942A8E27370053496F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A605C932A8E27370053496F /* Preview Assets.xcassets */; };
@@ -27,9 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryAppFlowFactory.swift; sourceTree = "<group>"; };
-		3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyAppFlowFactory.swift; sourceTree = "<group>"; };
-		3A327C1A2B25B6BB008289FF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A3766E32B34434F0067E363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A3766E62B3550BB0067E363 /* MainDish */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = MainDish; sourceTree = "<group>"; };
 		3A605C892A8E27350053496F /* SuperDish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperDish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,14 +60,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3A327C142B25B665008289FF /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				3A327C1A2B25B6BB008289FF /* LoginView.swift */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		3A605C802A8E27350053496F = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +85,6 @@
 			children = (
 				3A3766E32B34434F0067E363 /* Info.plist */,
 				3A605C8C2A8E27350053496F /* SuperDishApp.swift */,
-				3A31BEA02B73DFE000872640 /* DummyAppFlowFactory.swift */,
-				3A31BE9E2B73DFCE00872640 /* InMemoryAppFlowFactory.swift */,
-				3A327C142B25B665008289FF /* UI */,
 				3A605C902A8E27370053496F /* Assets.xcassets */,
 				3A605C9A2A8E27370053496F /* SuperDish.entitlements */,
 				3A605C922A8E27370053496F /* Preview Content */,
@@ -228,9 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A605C8D2A8E27350053496F /* SuperDishApp.swift in Sources */,
-				3A31BEA12B73DFE000872640 /* DummyAppFlowFactory.swift in Sources */,
-				3A31BE9F2B73DFCE00872640 /* InMemoryAppFlowFactory.swift in Sources */,
-				3A327C1B2B25B6BB008289FF /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
